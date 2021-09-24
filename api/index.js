@@ -25,7 +25,7 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Lean Teach API with Swagger',
+      title: 'API with Swagger',
       version: '0.1.0',
       description:
         'This is an API for handle purchase and sales order.',
@@ -34,9 +34,9 @@ const options = {
         url: 'https://spdx.org/licenses/MIT.html',
       },
       contact: {
-        name: 'Lean Tech',
-        url: 'http://www.lean-tech.io/',
-        email: 'info@lean-tech.io',
+        name: 'Order Manager',
+        url: 'http://www.order.io/',
+        email: 'info@order.io',
       },
     },
     servers: [
@@ -62,4 +62,3 @@ app.use('/', (req, res) => {
 app.listen(API_PORT || 3000, () => {
   console.log(`Listen on port ${API_PORT || 3000}`);
 });
-

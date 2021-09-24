@@ -59,7 +59,7 @@ In order to process and Sales Order it should take in account the following rule
 The entire application can be run with a single terminal command:
 
 ```
-docker-compose -up -d
+docker-compose up -d
 ```
 
 The REST Api app is listening in the PORT: 4000. 
@@ -78,11 +78,11 @@ Containers:
 - **backend**: It is a Rest API which use Express. 
 
 Volumes:
-- **leantech_dbdata**
-- **leantech_node_modules**
+- **dbdata**
+- **node_modules**
 
 Network
-- **leantech_app-network**
+- **app-network**
 
 If you want to stop it, run the following command:
 

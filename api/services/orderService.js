@@ -43,8 +43,8 @@ async function newPurchaseOrder(req, res) {
     let params = [];
     if (result.rows && result.rows.length > 0 && result.rows[0].id) {
       stockInsertUpdateStm = 'UPDATE stock SET open_balance = $1 WHERE id = $2';
-      const currentQuantity = parseInt(result.rows[0].open_balance);
-      params = [currentQuantity + quantity, result.rows[0].id];
+      const newBalance = parseInt(result.rows[0].open_balance) + parseInt(quantity);
+      params = [newBalance + quantity, result.rows[0].id];
     } else {
       stockInsertUpdateStm =
         'INSERT INTO stock (product_id, product_name,stock_at,open_balance) VALUES ($1,$2,$3, $4)';
@@ -154,7 +154,7 @@ async function getPurchaseOrderByProduct(req, res) {
   try {
     const id = req.params.id;
     const result = await pool.query(
-      'SELECT issue_date,quantity,product_id,product_name FROM purchase_order WHERE product_id = $1',
+      'SELECT to_char(issue_date, \'YYYY-MM-DD\') as issue_date,quantity,product_id,product_name FROM purchase_order WHERE product_id = $1',
       [id]
     );
 
@@ -169,7 +169,7 @@ async function getSalesOrderByProduct(req, res) {
   try {
     const id = req.params.id;
     const result = await pool.query(
-      'SELECT issue_date,quantity,product_id,product_name, status FROM sales_order WHERE product_id = $1',
+      'SELECT to_char(issue_date, \'YYYY-MM-DD\') as issue_date,quantity,product_id,product_name, status FROM sales_order WHERE product_id = $1',
       [id]
     );
 

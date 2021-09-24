@@ -1,0 +1,40 @@
+.home {
+  flex: 4;
+}
+
+.homeWidgets {
+  display: flex;
+  margin: 20px;
+}
+
+.productSelector {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.productSelect{
+  height: 40px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  width: 10rem;
+  font-size: 14px;
+}
+
+.selectorItem {
+  margin: 0px 20px;
+  padding: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.orderCharts {
+  display: flex;
+}
+
+.chartItem{
+  flex: 2;
+}

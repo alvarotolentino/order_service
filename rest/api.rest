@@ -1,26 +1,27 @@
 # Install the following extension, it helps to execute the following request as a REST client
 # https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+@productID = {{$randomInt 1 10}}
 ###
 POST http://localhost:4000/api/v1/purchase_order HTTP/1.1
 Content-Type: application/json
 
 {
-  "id":"1234",
-  "issueDate":"2021-08-20",
-  "quantity":10,
-  "productId":"768",
-  "productName":"Test4"
+  "id":"{{$randomInt 1000 9999}}",
+  "issueDate":"2021-09-{{$randomInt 10 30}}",
+  "quantity":"{{$randomInt 1 20}}",
+  "productId":"{{productID}}",
+  "productName":"Product {{productID}}"
 }
 ###
 POST http://localhost:4000/api/v1/sales_order HTTP/1.1
 Content-Type: application/json
 
 {
-  "id":"1234",
-  "issueDate":"2021-08-21",
-  "quantity":5,
-  "productId":"768",
-  "productName":"Test"
+  "id":"{{$randomInt 1000 9999}}",
+  "issueDate":"2021-09-{{$randomInt 10 30}}",
+  "quantity":"{{$randomInt 1 5}}",
+  "productId":"{{productID}}",
+  "productName":"Product {{productID}}"
 }
 ###
 GET http://localhost:4000/api/v1/products HTTP/1.1
