@@ -1,8 +1,11 @@
-# Order REST API service and REACT App
-This is an APP which has these components:
+![Order Manager](orders.gif)
 
-- REACT UI App. An REACT App which show in two charts both purchase and sales orders.
-- REST API. An Express app which exposes all endpoints required to process the request orders
+# Order Manager a REST API and REACT App
+This app has the following components:
+
+- A REACT UI App. An REACT App which show in two charts both purchase and sales orders.
+- A REST API. An Express app which exposes all endpoints required to process the request orders
+- A Postgres database to persist all orders.
 
 The APP process two order types:
 ## Purchase Orders
