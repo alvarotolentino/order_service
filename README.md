@@ -1,6 +1,10 @@
-# Order REST API service
-This is a Express Rest API which process both purchase and sales orders.
+# Order REST API service and REACT App
+This is an APP which has these components:
 
+- REACT UI App. An REACT App which show in two charts both purchase and sales orders.
+- REST API. An Express app which exposes all endpoints required to process the request orders
+
+The APP process two order types:
 ## Purchase Orders
 This contains the following info:
 
@@ -54,7 +58,7 @@ In order to process and Sales Order it should take in account the following rule
 - An FIFO approach is required to process a sales order and discount from the stock.
 
 
-# The REST API app
+# The Solution
 ## How to run the app
 The entire application can be run with a single terminal command:
 
@@ -62,20 +66,21 @@ The entire application can be run with a single terminal command:
 docker-compose up -d
 ```
 
-The REST Api app is listening in the PORT: 4000. 
+The REST API is listening on PORT 4000
+The UI is running on PORT 1337
 
-Check the documentation in the url:
+The REST API documentation is available on:
 
 ```
 http://localhost:4000/api-docs/
 ```
 
-
 The following **containers**, **volume** and **network** will be created after execute the above command.
 
 Containers:
 - **db**: It is a postgres database. The _.env_ file contains the configuration required to configure the database
-- **backend**: It is a Rest API which use Express. 
+- **backend**: It is a Rest API which use Express.  
+- **frontend**: It is a REAT App which show in two charts the differents orders filtered by products. 
 
 Volumes:
 - **dbdata**

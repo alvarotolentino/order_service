@@ -28,7 +28,7 @@ const options = {
       title: 'API with Swagger',
       version: '0.1.0',
       description:
-        'This is an API for handle purchase and sales order.',
+        'This is an API for handle purchase and sales orders.',
       license: {
         name: 'MIT',
         url: 'https://spdx.org/licenses/MIT.html',
